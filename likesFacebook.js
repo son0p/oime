@@ -1,21 +1,10 @@
 // List following and followers from several accounts
 
-var users = ['debrucesami',
-	     'providenciacol',
-	     'fede2001',
-	     'reygordiflon',
-	     'thecolombians',
-	     'elmismosebas',
-	     'unloquer',
-	     'estebangiraldo',
-	     'tarmacreggae',
-	     '_Donkristobal_',
-	     'selovendoco',
-	     'pulpomancito',
-	     'saleconelsol',
-	     'aerolineaada', 
-	     'promimascota',
-	     'lionreggaemusic'
+var users = ['dbammedellin',
+	     'estebangira',
+	     'SaleConElSol',
+	     'lion.reggae.music',
+	     'Providenciamusic'
 	     
 	    ];
   var values = [];
@@ -23,14 +12,14 @@ var users = ['debrucesami',
 
 function follow(user, callback) {
     var page = require('webpage').create();
-    page.open('https://twitter.com/' + user, function (status) {
+    page.open('https://www.facebook.com/' + user, function (status) {
         if (status === 'fail') {
             console.log(user + ': ?');
         } else {
             var data = page.evaluate(function () {
-                return document.querySelector('div.default-footer ul.stats.js-mini-profile-stats li a.js-nav[data-element-term=follower_stats] strong').innerText
+                return document.querySelector('#pagelet_timeline_likes_nav_top._5h60 span' ).innerHTML
             });
-	    //console.log(  Date.now() + ',' + + ',' + user);
+	   // console.log(  Date.now() + ',' + + ',' + user);
 	  
 	    values[values.length] = parseFloat(data.replace(/,/g, ''));
 	   		   

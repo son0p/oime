@@ -1,0 +1,2 @@
+## Arquitectura
+* hacer que desde la lectura de phantom.js se pueda llenar una base de datos.

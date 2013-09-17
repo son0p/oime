@@ -14,7 +14,12 @@ var users = ['debrucesami',
 	     'selovendoco',
 	     'pulpomancito',
 	     'saleconelsol',
-	     'aerolineaada'
+	     'aerolineaada',
+	     'promimascota',
+	     'lionreggaemusic',
+	     'mrbleat',
+	     'panorama_laguna',
+	     'lscfj'
 	    ];
   var values = [];
 //var scoreArray = [];

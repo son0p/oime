@@ -15,7 +15,10 @@ var users = ['debrucesami',
 	     'saleconelsol',
 	     'aerolineaada', 
 	     'promimascota',
-	     'lionreggaemusic'
+	     'lionreggaemusic',
+	     'mrbleat',
+	     'panorama_laguna',
+	     'lscfj'
 	     
 	    ];
   var values = [];

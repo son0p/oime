@@ -4,8 +4,9 @@ var users = ['dbammedellin',
 	     'estebangira',
 	     'SaleConElSol',
 	     'lion.reggae.music',
-	     'Providenciamusic'
-	     
+	     'Providenciamusic',
+	     'likesomecatfromjapan',
+	    'pages/Mr-Bleat/35106632719'
 	    ];
   var values = [];
 //var scoreArray = [];

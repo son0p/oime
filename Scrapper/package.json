@@ -1,0 +1,22 @@
+{
+  "name": "Scrapper",
+  "version": "0.0.0",
+  "description": "Script para obtener datos de la actividad en la red relacionada con las bandas de música de la ciudad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/son0p/oime"
+  },
+  "keywords": [
+    "música",
+    "data"
+  ],
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "node-phantom": "~0.2.3"
+  }
+}

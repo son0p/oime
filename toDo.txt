@@ -1,2 +1,9 @@
 ## Arquitectura
 * hacer que desde la lectura de phantom.js se pueda llenar una base de datos.
+* llenar la base de datos desde node.
+* computar tendencia de crecimiento promedio en los últimos 10 días.
+* computar tendencia global por sector.
+* poder consultar un usuario via web
+* poder comparar usuarios via web
+* top rata de crecimiento
+

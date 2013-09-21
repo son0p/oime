@@ -18,8 +18,9 @@ var users = ['debrucesami',
 	     'lionreggaemusic',
 	     'mrbleat',
 	     'panorama_laguna',
-	     'lscfj'
-
+	     'lscfj',
+	     'fonseca',
+	     'clopezcorrea'
 	    ];
   var values = [];
 //var scoreArray = [];

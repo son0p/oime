@@ -75,18 +75,19 @@ function followingList() {
 
 process();
 
-// // Los resultados se escriben a través de un servicio a la base de datos (o esa es la idea)
-// // Example using HTTP POST operation
+// Los resultados se escriben a través de un servicio a la base de datos (o esa es la idea)
+// Example using HTTP POST operation
 
-// var page = require('webpage').create(),
-//     server = 'http://posttestserver.com/post.php?dump',
-//     data = 'universe=expanding&answer=42';
+var page = require('webpage').create(),
+    server = 'http://localhost/jardincosmico/repo/testPhantomjs/scrap_insert',
+data = 'time=13334&user=445555';
 
-// page.open(server, 'post', data, function (status) {
-//     if (status !== 'success') {
-//         console.log('Unable to post!');
-//     } else {
-//         console.log(page.content);
-//     }
-//     phantom.exit();
-// });
+
+page.open(server, 'post', data, function (status) {
+    if (status !== 'success') {
+        console.log('Unable to post!');
+    } else {
+        console.log(page.content);
+    }
+    phantom.exit();
+});

@@ -8,20 +8,19 @@
 * More here: http://mongodb.github.io/node-mongodb-native/markdown-docs/insert.html
 */
 
-var exec = require('child_process').exec,
-    child;
-child = exec('cat dataTestJson.txt',
-  function (error, stdout, stderr) {
-      console.log(stdout, stderr);      
-     
-       if (error !== null) {
-      console.log('exec error: ' + error);
-    }
-});
+	var exec = require('child_process').exec,
+	child;
+	child = exec('cat dataTestJson.json',
+		     function stdout(error, stdout, stderr) {
+			// console.log(stdout, stderr);
+			 return stdout;   //not working
+						 
+			 if (error !== null) {
+			     console.log('exec error: ' + error);
+			 }
+		   
+		     });
 
-
-
-/*
 //require node modules (see package.json)
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
@@ -30,25 +29,18 @@ var MongoClient = require('mongodb').MongoClient
 MongoClient.connect('mongodb://127.0.0.1:27017/mydb', function(err, db) {
   if (err) throw err;
   console.log("Connected to Database");
-
-  
-
+ 
 //simple json record
-   
+  //   {time:"1377649381310" , user:"debrucesami", twFollowers:"8300"}
 
- var document = 	(child = exec('./phantomjs followersTest.js',
-    function (error, stdout, stderr) {
-        console.log(stdout, stderr);
-	var result = JSON.parse(stdout);
-    }
-));
+    var  document = {time:"1377649381310" , user:"debrucesami", twFollowers:"8300"}
 	//insert record
-	db.collection('testData').insert(document, function(err, records) {
+    db.collection('testData').insert(document, function(err, records) {
 		if (err) throw err;
 		console.log("Record added as "+records[0]._id);
+
 	});
+
+
 });
 
-
-
-*/

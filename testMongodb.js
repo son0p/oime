@@ -8,18 +8,7 @@
 * More here: http://mongodb.github.io/node-mongodb-native/markdown-docs/insert.html
 */
 
-	var exec = require('child_process').exec,
-	child;
-	child = exec('cat dataTestJson.json',
-		     function stdout(error, stdout, stderr) {
-			// console.log(stdout, stderr);
-			 return stdout;   //not working
-						 
-			 if (error !== null) {
-			     console.log('exec error: ' + error);
-			 }
-		   
-		     });
+
 
 //require node modules (see package.json)
 var MongoClient = require('mongodb').MongoClient
@@ -43,4 +32,20 @@ MongoClient.connect('mongodb://127.0.0.1:27017/mydb', function(err, db) {
 
 
 });
+
+
+//-----esto sería para intentar catpurar algo de lo que bota la terminal 
+
+	var exec = require('child_process').exec,
+	child;
+	child = exec('cat dataTestJson.json',
+		     function stdout(error, stdout, stderr) {
+			// console.log(stdout, stderr);
+			 return stdout;   //not working
+						 
+			 if (error !== null) {
+			     console.log('exec error: ' + error);
+			 }
+		   
+		     });
 

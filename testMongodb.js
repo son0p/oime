@@ -40,8 +40,8 @@ MongoClient.connect('mongodb://127.0.0.1:27017/mydb', function(err, db) {
 	child;
 	child = exec('cat dataTestJson.json',
 		     function stdout(error, stdout, stderr) {
-			// console.log(stdout, stderr);
-			 return stdout;   //not working
+		//	 console.log(stdout, stderr);   // este log funciona pero ¿ como hago para que la variable stdout se vea afuera de la función? y poderla usar en el código de arriba? 
+		//	 return stdout;   //not working
 						 
 			 if (error !== null) {
 			     console.log('exec error: ' + error);

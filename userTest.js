@@ -37,7 +37,7 @@ var scrapTwitter= function(userTwitter) {
 	    
 
 	    page.close();
-	    phantom.exit();
+	    
 	  //  return  user;
 	}
 
@@ -46,16 +46,17 @@ var scrapTwitter= function(userTwitter) {
 
 
 
-var scrapFacebook = function(userFacebook) {
-   
+var doScrap = function(doScrap) {
+   //scrapTwitter('providenciacol');
     console.log(userTwitter);
-
+    console.log("timeout");
+    phantom.exit();
 };
 
+  setTimeout(doScrap,5000);
 
-scrapTwitter('providenciacol');
-scrapFacebook();
-console.log(userTwitter);
+ scrapTwitter();
+//  console.log(userTwitter);
 
 
 

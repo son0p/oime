@@ -1,14 +1,8 @@
+var userTwitter
 
-
-
-var user = 0;
-
-
-//var scoreArray = [];
-
-function scrapTwitter(user) {
+var scrapTwitter= function(userTwitter) {
     var page = require('webpage').create();
-    page.open('https://twitter.com/' + user, function (status) {
+    page.open('https://twitter.com/' + userTwitter, function (status) {
         if (status === 'fail') {
             console.log(user + ': ?');
         } else {
@@ -28,7 +22,7 @@ function scrapTwitter(user) {
                 return document.querySelector('div.default-footer ul.stats.js-mini-profile-stats li a.js-nav[data-element-term=tweet_stats] strong').innerText
             });
 
-	    //scrap facebook band likes
+	  
 	    
 
 	    //extract the decimal point to make an Int
@@ -36,25 +30,48 @@ function scrapTwitter(user) {
 	    twitterFollowing = parseFloat(twitterFollowing.replace(/,/g, ''));
 	    twitterTweet = parseFloat(twitterTweet.replace(/,/g, ''));
 	
-	    page.close();
-
-	
-
 	    //log result in Json friendly
-	    return console.log('{time:"'+ Date.now() + '",' +'user:"'+ user + '",'
+	    //test 
+	    console.log('{time:"'+ Date.now() + '",' +'user:"'+ userTwitter + '",'
 			+ '"twitterFollower:"' + twitterFollower
 			+ '"twitterFollowing:"' + twitterFollowing 
 			+ '"twitterTweet:"' + twitterTweet
 			+ '"}');
-		  
+	    
 
-
+	    page.close();
 	    phantom.exit();
+	
+
+	   
+	  //  return  user;
+	   
+
+	  
+
+	    
 
 	}
-    });
+
+   });
 }
+var scrapFacebook = function(userFacebook) {
+console.log(userTwitter);
+};
 
 
 scrapTwitter('providenciacol');
+scrapFacebook();
+//console.log(data);
 
+
+
+/*
+console.log('{time:"'+ Date.now() + '",' +'user:"'+ user + '",'
+			+ '"twitterFollower:"' + twitterFollower
+			+ '"twitterFollowing:"' + twitterFollowing 
+			+ '"twitterTweet:"' + twitterTweet
+			+ '"}');
+
+*/
+		  

@@ -22,9 +22,6 @@ var scrapTwitter= function(userTwitter) {
                 return document.querySelector('div.default-footer ul.stats.js-mini-profile-stats li a.js-nav[data-element-term=tweet_stats] strong').innerText
             });
 
-	  
-	    
-
 	    //extract the decimal point to make an Int
 	    twitterFollower = parseFloat(twitterFollower.replace(/,/g, ''));
 	    twitterFollowing = parseFloat(twitterFollowing.replace(/,/g, ''));
@@ -41,28 +38,24 @@ var scrapTwitter= function(userTwitter) {
 
 	    page.close();
 	    phantom.exit();
-	
-
-	   
 	  //  return  user;
-	   
-
-	  
-
-	    
-
 	}
 
    });
 }
+
+
+
 var scrapFacebook = function(userFacebook) {
-console.log(userTwitter);
+   
+    console.log(userTwitter);
+
 };
 
 
 scrapTwitter('providenciacol');
 scrapFacebook();
-//console.log(data);
+console.log(userTwitter);
 
 
 

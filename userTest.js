@@ -1,4 +1,6 @@
 var userTwitter
+var foo
+var userTw
 
 var scrapTwitter= function(userTwitter) {
     var page = require('webpage').create();
@@ -29,33 +31,78 @@ var scrapTwitter= function(userTwitter) {
 	
 	    //log result in Json friendly
 	    //test 
+	    /*
 	    console.log('{time:"'+ Date.now() + '",' +'user:"'+ userTwitter + '",'
 			+ '"twitterFollower:"' + twitterFollower
 			+ '"twitterFollowing:"' + twitterFollowing 
 			+ '"twitterTweet:"' + twitterTweet
 			+ '"}');
-	    
+	    */
 
 	    page.close();
 	    
-	  //  return  user;
+	    twUser = userTwitter;
+	    twFollower= twitterFollower;
+	    twFollowing = twitterFollowing; 
+	    twTweet = twitterTweet;
+	    
+	   
+	  
 	}
 
    });
 }
 
+var scrapFacebook = function (userFacebook) {
+    var page = require('webpage').create();
+    page.open('https://www.facebook.com/' + userFacebook, function (status) {
+        if (status === 'fail') {
+            console.log(userFacebook + ': ?');
+        } else {
+            var data = page.evaluate(function () {
+                return document.querySelector('#pagelet_timeline_likes_nav_top._5h60 span' ).innerHTML
+            });
+	   // console.log(  Date.now() + ',' + + ',' + user);
+	  
+	    likesFacebook = parseFloat(data.replace(/,/g, ''));
+	   		   
+	}
+	
+	page.close();
+
+	fbUser = userFacebook;
+	fbLikes= likesFacebook;
+
+        doScrap();
+
+    });
+
+}
 
 
 var doScrap = function(doScrap) {
-   //scrapTwitter('providenciacol');
-    console.log(userTwitter);
-    console.log("timeout");
-    phantom.exit();
+    
+    console.log('{time:"'+ Date.now() + '",' +' user:"'+ twUser + '",'
+			+ ' "twitterFollower:"' + twFollower + '",'
+			+ ' "twitterFollowing:"' + twFollowing + '",'
+			+ ' "twitterTweet:"' + twTweet + '",'
+		+ ' "Facebook User:"' + fbUser + '",'
+		+ ' "Facebook Likes:"' + fbLikes
+			+ '"}');
+
+    
+    
+    
+    phantom.exit();   
 };
 
-  setTimeout(doScrap,5000);
+scrapTwitter('providenciacol');  
+scrapFacebook('Providenciamusic');
+ 
 
- scrapTwitter();
+
+
+
 //  console.log(userTwitter);
 
 

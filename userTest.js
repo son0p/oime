@@ -46,7 +46,7 @@ var scrapTwitter= function(userTwitter) {
 	    twFollowing = twitterFollowing; 
 	    twTweet = twitterTweet;
 	    
-	   
+	    scrapFacebook('Providenciamusic');	   
 	  
 	}
 
@@ -97,7 +97,7 @@ var doScrap = function(doScrap) {
 };
 
 scrapTwitter('providenciacol');  
-scrapFacebook('Providenciamusic');
+
  
 
 

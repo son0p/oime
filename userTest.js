@@ -1,14 +1,10 @@
+var userTwitter
+var foo
+var userTw
 
-
-
-var user = 0;
-
-
-//var scoreArray = [];
-
-function scrapTwitter(user) {
+var scrapTwitter= function(userTwitter) {
     var page = require('webpage').create();
-    page.open('https://twitter.com/' + user, function (status) {
+    page.open('https://twitter.com/' + userTwitter, function (status) {
         if (status === 'fail') {
             console.log(user + ': ?');
         } else {
@@ -28,33 +24,95 @@ function scrapTwitter(user) {
                 return document.querySelector('div.default-footer ul.stats.js-mini-profile-stats li a.js-nav[data-element-term=tweet_stats] strong').innerText
             });
 
-	    //scrap facebook band likes
-	    
-
 	    //extract the decimal point to make an Int
 	    twitterFollower = parseFloat(twitterFollower.replace(/,/g, ''));
 	    twitterFollowing = parseFloat(twitterFollowing.replace(/,/g, ''));
 	    twitterTweet = parseFloat(twitterTweet.replace(/,/g, ''));
 	
-	    page.close();
-
-	
-
 	    //log result in Json friendly
-	    return console.log('{time:"'+ Date.now() + '",' +'user:"'+ user + '",'
+	    //test 
+	    /*
+	    console.log('{time:"'+ Date.now() + '",' +'user:"'+ userTwitter + '",'
 			+ '"twitterFollower:"' + twitterFollower
 			+ '"twitterFollowing:"' + twitterFollowing 
 			+ '"twitterTweet:"' + twitterTweet
 			+ '"}');
-		  
+	    */
 
-
-	    phantom.exit();
-
+	    page.close();
+	    
+	    twUser = userTwitter;
+	    twFollower= twitterFollower;
+	    twFollowing = twitterFollowing; 
+	    twTweet = twitterTweet;
+	    
+	    scrapFacebook('Providenciamusic');	   
+	  
 	}
+
+   });
+}
+
+var scrapFacebook = function (userFacebook) {
+    var page = require('webpage').create();
+    page.open('https://www.facebook.com/' + userFacebook, function (status) {
+        if (status === 'fail') {
+            console.log(userFacebook + ': ?');
+        } else {
+            var data = page.evaluate(function () {
+                return document.querySelector('#pagelet_timeline_likes_nav_top._5h60 span' ).innerHTML
+            });
+	   // console.log(  Date.now() + ',' + + ',' + user);
+	  
+	    likesFacebook = parseFloat(data.replace(/,/g, ''));
+	   		   
+	}
+	
+	page.close();
+
+	fbUser = userFacebook;
+	fbLikes= likesFacebook;
+
+        doScrap();
+
     });
+
 }
 
 
-scrapTwitter('providenciacol');
+var doScrap = function(doScrap) {
+    
+    console.log('{time:"'+ Date.now() + '",' +' user:"'+ twUser + '",'
+			+ ' "twitterFollower:"' + twFollower + '",'
+			+ ' "twitterFollowing:"' + twFollowing + '",'
+			+ ' "twitterTweet:"' + twTweet + '",'
+		+ ' "Facebook User:"' + fbUser + '",'
+		+ ' "Facebook Likes:"' + fbLikes
+			+ '"}');
 
+    
+    
+    
+    phantom.exit();   
+};
+
+scrapTwitter('providenciacol');  
+
+ 
+
+
+
+
+//  console.log(userTwitter);
+
+
+
+/*
+console.log('{time:"'+ Date.now() + '",' +'user:"'+ user + '",'
+			+ '"twitterFollower:"' + twitterFollower
+			+ '"twitterFollowing:"' + twitterFollowing 
+			+ '"twitterTweet:"' + twitterTweet
+			+ '"}');
+
+*/
+		  

@@ -2,6 +2,9 @@ var userTwitter
 var foo
 var userTw
 
+
+
+
 var scrapTwitter= function(userTwitter) {
     var page = require('webpage').create();
     page.open('https://twitter.com/' + userTwitter, function (status) {
@@ -28,25 +31,16 @@ var scrapTwitter= function(userTwitter) {
 	    twitterFollower = parseFloat(twitterFollower.replace(/,/g, ''));
 	    twitterFollowing = parseFloat(twitterFollowing.replace(/,/g, ''));
 	    twitterTweet = parseFloat(twitterTweet.replace(/,/g, ''));
-	
-	    //log result in Json friendly
-	    //test 
-	    /*
-	    console.log('{time:"'+ Date.now() + '",' +'user:"'+ userTwitter + '",'
-			+ '"twitterFollower:"' + twitterFollower
-			+ '"twitterFollowing:"' + twitterFollowing 
-			+ '"twitterTweet:"' + twitterTweet
-			+ '"}');
-	    */
-
+		   
 	    page.close();
 	    
 	    twUser = userTwitter;
 	    twFollower= twitterFollower;
 	    twFollowing = twitterFollowing; 
 	    twTweet = twitterTweet;
-	    
-	    scrapFacebook('Providenciamusic');	   
+	   
+	    console.log(userTwitter + userFacebook);
+	    scrapFacebook(userFacebook);	   
 	  
 	}
 
@@ -81,22 +75,46 @@ var scrapFacebook = function (userFacebook) {
 
 
 var doScrap = function(doScrap) {
+
+  
+  
     
     console.log('{time:"'+ Date.now() + '",' +' user:"'+ twUser + '",'
-			+ ' "twitterFollower:"' + twFollower + '",'
-			+ ' "twitterFollowing:"' + twFollowing + '",'
-			+ ' "twitterTweet:"' + twTweet + '",'
-		+ ' "Facebook User:"' + fbUser + '",'
-		+ ' "Facebook Likes:"' + fbLikes
+			+ ' twitterFollower:"' + twFollower + '",'
+			+ ' twitterFollowing:"' + twFollowing + '",'
+			+ ' twitterTweet:"' + twTweet + '",'
+		+ ' FacebookUser:"' + fbUser + '",'
+		+ ' FacebookLikes:"' + fbLikes
 			+ '"}');
 
-    
+  
     
     
     phantom.exit();   
 };
 
-scrapTwitter('providenciacol');  
+
+/*
+/ Passing arguments from console
+*/
+ 
+var system = require('system');
+if (system.args.length === 1) {
+    console.log('usage:  userTest.js [twitterUser] [facebookUser]');
+    phantom.exit();
+} else {
+    system.args.forEach(function (arg, i) {
+            console.log(i + ': ' + arg);
+
+    });
+    userTwitter = system.args[1];
+    userFacebook = system.args[2];
+   
+    
+    scrapTwitter(userTwitter);  
+}
+
+
 
  
 

@@ -20,7 +20,16 @@ var users = ['debrucesami',
 	     'panorama_laguna',
 	     'lscfj',
 	     'fonseca',
-	     'clopezcorrea'
+	     'clopezcorrea',
+	     'viejasenbola',
+	     'juanes',
+	     'shakira',
+	     'MerlotteJRock',
+	     '_Volatil_',
+	     'Le_Mua',
+	     'ciudadpasarela',
+	     
+	    
 	    ];
   var values = [];
 //var scoreArray = [];
@@ -77,7 +86,7 @@ process();
 
 // Los resultados se escriben a través de un servicio a la base de datos (o esa es la idea)
 // Example using HTTP POST operation
-
+/*
 var page = require('webpage').create(),
     server = 'http://posttestserver.com/post.php?dump',
     data = 'universe=expanding&answer=42';
@@ -90,3 +99,5 @@ page.open(server, 'post', data, function (status) {
     }
     phantom.exit();
 });
+
+*/

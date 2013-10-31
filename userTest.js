@@ -9,7 +9,7 @@ var scrapTwitter= function(userTwitter) {
     var page = require('webpage').create();
     page.open('https://twitter.com/' + userTwitter, function (status) {
         if (status === 'fail') {
-            console.log(user + ': ?');
+           // console.log(user + ': ?');
         } else {
 
 	    //scrap followers
@@ -39,7 +39,7 @@ var scrapTwitter= function(userTwitter) {
 	    twFollowing = twitterFollowing; 
 	    twTweet = twitterTweet;
 	   
-	    console.log(userTwitter + userFacebook);
+	   // console.log(userTwitter + userFacebook);
 	    scrapFacebook(userFacebook);	   
 	  
 	}
@@ -99,6 +99,8 @@ var doScrap = function(doScrap) {
 */
  
 var system = require('system');
+/*
+
 if (system.args.length === 1) {
     console.log('usage:  userTest.js [twitterUser] [facebookUser]');
     phantom.exit();
@@ -107,15 +109,21 @@ if (system.args.length === 1) {
             console.log(i + ': ' + arg);
 
     });
-    userTwitter = system.args[1];
-    userFacebook = system.args[2];
+
+
+    userTwitter = debrucesami;     // system.args[1];
+    userFacebook = dbammedellin;   // system.args[2];
    
     
     scrapTwitter(userTwitter);  
 }
 
-
-
+*/
+userTwitter = "debrucesami";     // system.args[1];
+userFacebook = "dbammedellin";   // system.args[2];
+   
+    
+scrapTwitter(userTwitter);  
  
 
 

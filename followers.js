@@ -1,37 +1,11 @@
 // List following and followers from several accounts
 
-var users = ['debrucesami',
-	     'providenciacol',
-	     'fede2001',
-	     'reygordiflon',
-	     'thecolombians',
-	     'elmismosebas',
-	     'unloquer',
-	     'estebangiraldo',
-	     'tarmacreggae',
-	     '_Donkristobal_',
-	     'selovendoco',
-	     'pulpomancito',
-	     'saleconelsol',
-	     'aerolineaada',
-	     'promimascota',
-	     'lionreggaemusic',
+var users = ['unloquer',
 	     'mrbleat',
-	     'panorama_laguna',
-	     'lscfj',
-	     'fonseca',
-	     'clopezcorrea',
-	     'viejasenbola',
-	     'juanes',
-	     'shakira',
-	     'MerlotteJRock',
-	     '_Volatil_',
-	     'Le_Mua',
-	     'ciudadpasarela',
-	     
-	    
+	     'CasaTeatroEP',
 	    ];
-  var values = [];
+ 
+ var values = [];
 //var scoreArray = [];
 
 function follow(user, callback) {
